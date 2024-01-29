@@ -8,132 +8,132 @@ const index = () => {
     {
       char: "A",
       desc: `Learn the letter A`,
-      url: "http://localhost:3000/character/A",
+      url: "/character/A",
     },
     {
       char: "B",
       desc: `Learn the letter B`,
-      url: "http://localhost:3000/character/B",
+      url: "/character/B",
     },
     {
       char: "C",
       desc: `Learn the letter C`,
-      url: "http://localhost:3000/character/C",
+      url: "/character/C",
     },
     {
       char: "D",
       desc: `Learn the letter D`,
-      url: "http://localhost:3000/character/D",
+      url: "/character/D",
     },
     {
       char: "E",
       desc: `Learn the letter E`,
-      url: "http://localhost:3000/character/E",
+      url: "/character/E",
     },
     {
       char: "F",
       desc: `Learn the letter F`,
-      url: "http://localhost:3000/character/F",
+      url: "/character/F",
     },
     {
       char: "G",
       desc: `Learn the letter G`,
-      url: "http://localhost:3000/character/G",
+      url: "/character/G",
     },
     {
       char: "H",
       desc: `Learn the letter H`,
-      url: "http://localhost:3000/character/H",
+      url: "/character/H",
     },
     {
       char: "I",
       desc: `Learn the letter I`,
-      url: "http://localhost:3000/character/I",
+      url: "/character/I",
     },
     {
       char: "J",
       desc: `Learn the letter J`,
-      url: "http://localhost:3000/character/J",
+      url: "/character/J",
     },
     {
       char: "K",
       desc: `Learn the letter K`,
-      url: "http://localhost:3000/character/K",
+      url: "/character/K",
     },
     {
       char: "L",
       desc: `Learn the letter L`,
-      url: "http://localhost:3000/character/L",
+      url: "/character/L",
     },
     {
       char: "M",
       desc: `Learn the letter M`,
-      url: "http://localhost:3000/character/M",
+      url: "/character/M",
     },
     {
       char: "N",
       desc: `Learn the letter N`,
-      url: "http://localhost:3000/character/N",
+      url: "/character/N",
     },
     {
       char: "O",
       desc: `Learn the letter O`,
-      url: "http://localhost:3000/character/O",
+      url: "/character/O",
     },
     {
       char: "P",
       desc: `Learn the letter P`,
-      url: "http://localhost:3000/character/P",
+      url: "/character/P",
     },
     {
       char: "Q",
       desc: `Learn the letter Q`,
-      url: "http://localhost:3000/character/Q",
+      url: "/character/Q",
     },
     {
       char: "R",
       desc: `Learn the letter R`,
-      url: "http://localhost:3000/character/R",
+      url: "/character/R",
     },
     {
       char: "S",
       desc: `Learn the letter S`,
-      url: "http://localhost:3000/character/S",
+      url: "/character/S",
     },
     {
       char: "T",
       desc: `Learn the letter T`,
-      url: "http://localhost:3000/character/T",
+      url: "/character/T",
     },
     {
       char: "U",
       desc: `Learn the letter U`,
-      url: "http://localhost:3000/character/U",
+      url: "/character/U",
     },
     {
       char: "V",
       desc: `Learn the letter V`,
-      url: "http://localhost:3000/character/V",
+      url: "/character/V",
     },
     {
       char: "W",
       desc: `Learn the letter W`,
-      url: "http://localhost:3000/character/W",
+      url: "/character/W",
     },
     {
       char: "X",
       desc: `Learn the letter X`,
-      url: "http://localhost:3000/character/X",
+      url: "/character/X",
     },
     {
       char: "Y",
       desc: `Learn the letter Y`,
-      url: "http://localhost:3000/character/Y",
+      url: "/character/Y",
     },
     {
       char: "Z",
       desc: `Learn the letter Z`,
-      url: "http://localhost:3000/character/Z",
+      url: "/character/Z",
     },
   ];
 
@@ -141,9 +141,10 @@ const index = () => {
     <>
       <Navbar />
       <List>
-        {details.map((detail, i) => {
+        {details.map((detail, index) => {
           return (
             <HeroSection
+              key={index}
               category={detail.char}
               imageHeading={detail.char}
               description={detail.desc}
