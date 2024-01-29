@@ -8,42 +8,42 @@ const index = () => {
     {
       char: "Hello",
       desc: `Learn the word`,
-      url: "http://localhost:3000/word/Hello",
+      url: "/word/Hello",
     },
     {
       char: "Hi",
       desc: `Learn the word`,
-      url: "http://localhost:3000/word/Hi",
+      url: "/word/Hi",
     },
     {
       char: "Yes",
       desc: `Learn the word`,
-      url: "http://localhost:3000/word/Yes",
+      url: "/word/Yes",
     },
     {
       char: "No",
       desc: `Learn the word`,
-      url: "http://localhost:3000/word/No",
+      url: "/word/No",
     },
     {
       char: "You",
       desc: `Learn the word`,
-      url: "http://localhost:3000/word/You",
+      url: "/word/You",
     },
     {
       char: "Boy",
       desc: `Learn the word`,
-      url: "http://localhost:3000/word/Boy",
+      url: "/word/Boy",
     },
     {
       char: "Girl",
       desc: `Learn the word`,
-      url: "http://localhost:3000/word/Girl",
+      url: "/word/Girl",
     },
     {
       char: "God",
       desc: `Learn the word`,
-      url: "http://localhost:3000/word/God",
+      url: "/word/God",
     },
   ];
 
@@ -51,9 +51,10 @@ const index = () => {
     <>
       <Navbar />
       <List>
-        {details.map((detail, i) => {
+        {details.map((detail, index) => {
           return (
             <HeroSection
+              key={index}
               category={detail.char}
               imageHeading={detail.char}
               description={detail.desc}
