@@ -5,14 +5,46 @@ import styled from "styled-components";
 
 const index = () => {
   const details = [
-    { char: "Thank You", desc: `Learn the sentence` },
-    { char: "Who are you?", desc: `Learn the sentence` },
-    { char: "How are you?", desc: `Learn the sentence` },
-    { char: "I am fine", desc: `Learn the sentence` },
-    { char: "I like this", desc: `Learn the sentence` },
-    { char: "I can", desc: `Learn the sentence` },
-    { char: "I will", desc: `Learn the sentence` },
-    { char: "Thank God", desc: `Learn the sentence` },
+    {
+      char: "Thank You",
+      desc: `Learn the sentence`,
+      url: "http://localhost:3000/sentence/Thank_You",
+    },
+    {
+      char: "Who are you?",
+      desc: `Learn the sentence`,
+      url: "http://localhost:3000/sentence/Who_Are_You",
+    },
+    {
+      char: "How are you?",
+      desc: `Learn the sentence`,
+      url: "http://localhost:3000/sentence/How_Are_You",
+    },
+    {
+      char: "I am fine",
+      desc: `Learn the sentence`,
+      url: "http://localhost:3000/sentence/I_Am_Fine",
+    },
+    {
+      char: "I like this",
+      desc: `Learn the sentence`,
+      url: "http://localhost:3000/sentence/I_Like_This",
+    },
+    {
+      char: "I can",
+      desc: `Learn the sentence`,
+      url: "http://localhost:3000/sentence/I_Can",
+    },
+    {
+      char: "I will",
+      desc: `Learn the sentence`,
+      url: "http://localhost:3000/sentence/I_Will",
+    },
+    {
+      char: "Thank God",
+      desc: `Learn the sentence`,
+      url: "http://localhost:3000/sentence/Thank_God",
+    },
   ];
 
   return (
@@ -21,7 +53,12 @@ const index = () => {
       <List>
         {details.map((detail, i) => {
           return (
-            <HeroSection imageHeading={detail.char} description={detail.desc} />
+            <HeroSection
+              category={detail.char}
+              imageHeading={detail.char}
+              description={detail.desc}
+              url={detail.url}
+            />
           );
         })}
       </List>
