@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import service from '@/pages/services/service';
+import service from '@/public/services/service';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faHandPaper } from '@fortawesome/free-solid-svg-icons';
 
@@ -150,6 +150,9 @@ export default function Page() {
    * element to show what's on camera.
    */
   useEffect(() => {
+    let mounted = true;
+    let videoStream = null;
+
     async function initCamera() {
       videoElement.current.width = maxVideoSize;
       videoElement.current.height = maxVideoSize;
@@ -163,6 +166,12 @@ export default function Page() {
             height: maxVideoSize,
           },
         });
+        if (!mounted) {
+          // If component unmounted before we got the stream, cleanup
+          stream.getTracks().forEach(track => track.stop());
+          return null;
+        }
+        videoStream = stream;
         videoElement.current.srcObject = stream;
 
         return new Promise((resolve) => {
@@ -179,6 +188,7 @@ export default function Page() {
 
     async function load() {
       const videoLoaded = await initCamera();
+      if (!mounted || !videoLoaded) return;
       await service.load();
       videoLoaded.play();
       setTimeout(processImage, 0);
@@ -187,6 +197,17 @@ export default function Page() {
     }
 
     load();
+
+    // Cleanup function that runs when component unmounts
+    return () => {
+      mounted = false;
+      if (videoStream) {
+        videoStream.getTracks().forEach(track => track.stop());
+      }
+      if (videoElement.current) {
+        videoElement.current.srcObject = null;
+      }
+    };
   }, []);
 
   return (
