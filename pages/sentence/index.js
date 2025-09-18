@@ -8,42 +8,42 @@ const index = () => {
     {
       char: "Thank You",
       desc: `Learn the sentence`,
-      url: "http://localhost:3000/sentence/Thank_You",
+      url: "/sentence/Thank_You",
     },
     {
       char: "Who are you?",
       desc: `Learn the sentence`,
-      url: "http://localhost:3000/sentence/Who_Are_You",
+      url: "/sentence/Who_Are_You",
     },
     {
       char: "How are you?",
       desc: `Learn the sentence`,
-      url: "http://localhost:3000/sentence/How_Are_You",
+      url: "/sentence/How_Are_You",
     },
     {
       char: "I am fine",
       desc: `Learn the sentence`,
-      url: "http://localhost:3000/sentence/I_Am_Fine",
+      url: "/sentence/I_Am_Fine",
     },
     {
       char: "I like this",
       desc: `Learn the sentence`,
-      url: "http://localhost:3000/sentence/I_Like_This",
+      url: "/sentence/I_Like_This",
     },
     {
       char: "I can",
       desc: `Learn the sentence`,
-      url: "http://localhost:3000/sentence/I_Can",
+      url: "/sentence/I_Can",
     },
     {
       char: "I will",
       desc: `Learn the sentence`,
-      url: "http://localhost:3000/sentence/I_Will",
+      url: "/sentence/I_Will",
     },
     {
       char: "Thank God",
       desc: `Learn the sentence`,
-      url: "http://localhost:3000/sentence/Thank_God",
+      url: "/sentence/Thank_God",
     },
   ];
 
@@ -51,9 +51,10 @@ const index = () => {
     <>
       <Navbar />
       <List>
-        {details.map((detail, i) => {
+        {details.map((detail, index) => {
           return (
             <HeroSection
+              key={index}
               category={detail.char}
               imageHeading={detail.char}
               description={detail.desc}
