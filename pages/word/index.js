@@ -5,14 +5,46 @@ import styled from "styled-components";
 
 const index = () => {
   const details = [
-    { char: "Hello", desc: `Learn the word` },
-    { char: "Hi", desc: `Learn the word` },
-    { char: "Yes", desc: `Learn the word` },
-    { char: "No", desc: `Learn the word` },
-    { char: "You", desc: `Learn the word` },
-    { char: "Boy", desc: `Learn the word` },
-    { char: "Girl", desc: `Learn the word` },
-    { char: "God", desc: `Learn the word` },
+    {
+      char: "Hello",
+      desc: `Learn the word`,
+      url: "http://localhost:3000/word/Hello",
+    },
+    {
+      char: "Hi",
+      desc: `Learn the word`,
+      url: "http://localhost:3000/word/Hi",
+    },
+    {
+      char: "Yes",
+      desc: `Learn the word`,
+      url: "http://localhost:3000/word/Yes",
+    },
+    {
+      char: "No",
+      desc: `Learn the word`,
+      url: "http://localhost:3000/word/No",
+    },
+    {
+      char: "You",
+      desc: `Learn the word`,
+      url: "http://localhost:3000/word/You",
+    },
+    {
+      char: "Boy",
+      desc: `Learn the word`,
+      url: "http://localhost:3000/word/Boy",
+    },
+    {
+      char: "Girl",
+      desc: `Learn the word`,
+      url: "http://localhost:3000/word/Girl",
+    },
+    {
+      char: "God",
+      desc: `Learn the word`,
+      url: "http://localhost:3000/word/God",
+    },
   ];
 
   return (
@@ -21,7 +53,12 @@ const index = () => {
       <List>
         {details.map((detail, i) => {
           return (
-            <HeroSection imageHeading={detail.char} description={detail.desc} />
+            <HeroSection
+              category={detail.char}
+              imageHeading={detail.char}
+              description={detail.desc}
+              url={detail.url}
+            />
           );
         })}
       </List>
